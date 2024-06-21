@@ -1,5 +1,7 @@
 <h1 align = "center"> VBA Challenge </h1>
 
+In this VBA project, I developed a script that processes stock data across multiple quarters. The script loops through each stock ticker symbol for every worksheet, which represents different quarters. For each stock, it calculates and outputs essential financial metrics, including the quarterly change in price, percentage change, and total volume traded. Additionally, the script identifies and returns the stock with the greatest percentage increase, the greatest percentage decrease, and the greatest total volume for each quarter. This comprehensive analysis provides valuable insights into stock performance over time. By automating these calculations, the script enhances efficiency and accuracy, making it an indispensable tool for financial analysis and decision-making.
+
 ## Table of Contents
 
 - [Criteria](#criteria)
