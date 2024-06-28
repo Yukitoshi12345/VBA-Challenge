@@ -1,3 +1,5 @@
+Attribute VB_Name = "StockAnalysis"
+
 ' ---------------------------------------------------------------------------------------------------------------------------------------------
 ' Create a script that loops through all the stocks for each quarter and outputs the following information:
 
@@ -10,7 +12,23 @@
 ' ---------------------------------------------------------------------------------------------------------------------------------------------
 
 Sub StockAnalysis()
-    For Each ws In worksheets
+
+    ' Loop through each worksheet
+    For Each ws In Worksheets
+        
+         ' Declare variables
+        Dim ticker As String
+        Dim openPrice As Double
+        Dim closePrice As Double
+        Dim quarterlyChange As Double
+        Dim percentChange As Double
+        Dim greatestInc As Double
+        Dim greatestDec As Double
+        Dim greatestVol As Double
+        Dim totalVolume As Double
+        Dim summaryTableRow As Integer
+        Dim lastRow As Long
+        Dim lastRowSummary As Long
         
         ' Set Column Headers
         With ws
@@ -39,7 +57,8 @@ Sub StockAnalysis()
             ws.Columns(17).AutoFit
         End With
     
-
+     
     Next ws
-
+    
 End Sub
+
