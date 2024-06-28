@@ -72,9 +72,36 @@ Sub StockAnalysis()
                 
                 ' Capture the current ticker symbol
                 ticker = ws.Cells(i, 1).Value
+
+                ' Capture the closing price of the current ticker
+                closePrice = ws.Cells(i, 6).Value
+               ' Calculate quarterly change and percent change
+                quarterlyChange = closePrice - openPrice
+                If openPrice <> 0 Then
+                    percentChange = quarterlyChange / openPrice
+                Else
+                    percentChange = 0
+                End If
                 
                 ' Output results to the summary table
                 ws.Cells(summaryTableRow, 9).Value = ticker
+                ws.Cells(summaryTableRow, 10).Value = quarterlyChange
+                ws.Cells(summaryTableRow, 11).Value = percentChange
+                ws.Cells(summaryTableRow, 11).NumberFormat = "0.00%"
+
+                ' Format the quarterly change cells
+                If quarterlyChange > 0 Then
+                    ws.Cells(summaryTableRow, 10).Interior.ColorIndex = 4 ' Green for positive change
+                    ws.Cells(summaryTableRow, 11).Interior.ColorIndex = 4 ' Green for positive change
+                ElseIf quarterlyChange < 0 Then
+                    ws.Cells(summaryTableRow, 10).Interior.ColorIndex = 3 ' Red for negative change
+                    ws.Cells(summaryTableRow, 11).Interior.ColorIndex = 3 ' Red for negative change
+                End If
+                
+                ' Prepare for the next ticker
+                openPrice = ws.Cells(i + 1, 3).Value
+                totalVolume = 0
+                summaryTableRow = summaryTableRow + 1
             
             End if
 
@@ -83,4 +110,3 @@ Sub StockAnalysis()
     Next ws
     
 End Sub
-
