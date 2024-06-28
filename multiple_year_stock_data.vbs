@@ -15,8 +15,8 @@ Sub StockAnalysis()
 
     ' Loop through each worksheet
     For Each ws In Worksheets
-        
-         ' Declare variables
+    
+        ' Declare variables
         Dim ticker As String
         Dim openPrice As Double
         Dim closePrice As Double
@@ -57,13 +57,16 @@ Sub StockAnalysis()
             ws.Columns(17).AutoFit
         End With
     
-        ' Initialise variables
+        ' Initialize variables
         summaryTableRow = 2
         totalVolume = 0
         
         ' Find the last row with data in the worksheet
         lastRow = ws.Cells(ws.Rows.Count, 1).End(xlUp).Row
-
+        
+        ' Initialize open price with the first ticker's open price
+        openPrice = ws.Cells(2, 3).Value
+        
         ' Loop through all rows of data
         For i = 2 To lastRow
             
@@ -72,10 +75,11 @@ Sub StockAnalysis()
                 
                 ' Capture the current ticker symbol
                 ticker = ws.Cells(i, 1).Value
-
+                
                 ' Capture the closing price of the current ticker
                 closePrice = ws.Cells(i, 6).Value
-               ' Calculate quarterly change and percent change
+                
+                ' Calculate quarterly change and percent change
                 quarterlyChange = closePrice - openPrice
                 If openPrice <> 0 Then
                     percentChange = quarterlyChange / openPrice
@@ -89,7 +93,7 @@ Sub StockAnalysis()
                 ws.Cells(summaryTableRow, 11).Value = percentChange
                 ws.Cells(summaryTableRow, 11).NumberFormat = "0.00%"
                 ws.Cells(summaryTableRow, 12).Value = totalVolume
-
+                
                 ' Format the quarterly change cells
                 If quarterlyChange > 0 Then
                     ws.Cells(summaryTableRow, 10).Interior.ColorIndex = 4 ' Green for positive change
@@ -103,13 +107,52 @@ Sub StockAnalysis()
                 openPrice = ws.Cells(i + 1, 3).Value
                 totalVolume = 0
                 summaryTableRow = summaryTableRow + 1
+                
             Else
                 ' Accumulate the total volume for the current ticker
                 totalVolume = totalVolume + ws.Cells(i, 7).Value
             End If
-
+            
         Next i
         
+        ' Initialise greatest increase, decrease, and volume variables
+        greatestInc = ws.Cells(2, 11).Value
+        greatestDec = ws.Cells(2, 11).Value
+        greatestVol = ws.Cells(2, 12).Value
+        
+        ' Find the last row in the summary table
+        lastRowSummary = ws.Cells(ws.Rows.Count, 9).End(xlUp).Row
+        
+        ' Loop through the summary table to find the greatest increase, decrease, and volume
+        For i = 2 To lastRowSummary
+            If ws.Cells(i, 11).Value > greatestInc Then
+                greatestInc = ws.Cells(i, 11).Value
+                tickerInc = ws.Cells(i, 9).Value
+            End If
+            
+            If ws.Cells(i, 11).Value < greatestDec Then
+                greatestDec = ws.Cells(i, 11).Value
+                tickerDec = ws.Cells(i, 9).Value
+            End If
+            
+            If ws.Cells(i, 12).Value > greatestVol Then
+                greatestVol = ws.Cells(i, 12).Value
+                tickerVol = ws.Cells(i, 9).Value
+            End If
+        Next i
+        
+        ' Output the greatest increase, decrease, and volume to the secondary summary table
+        ws.Cells(2, 16).Value = tickerInc
+        ws.Cells(2, 17).Value = greatestInc
+        ws.Cells(2, 17).NumberFormat = "0.00%"
+        
+        ws.Cells(3, 16).Value = tickerDec
+        ws.Cells(3, 17).Value = greatestDec
+        ws.Cells(3, 17).NumberFormat = "0.00%"
+        
+        ws.Cells(4, 16).Value = tickerVol
+        ws.Cells(4, 17).Value = greatestVol
+    
     Next ws
     
 End Sub
