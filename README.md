@@ -24,9 +24,11 @@ Create a script that loops through all the stocks for each quarter and outputs t
 
 ## Results
 
-<b>Quarterly 1:</b>
+<u><b>Quarterly 1:</b></u>
 
-![](./results/Quarterly1.png)
+![](./assets/images/Quarterly1.png)
+
+<br>
 
 1. Greatest % Increase: The ticker with the greatest percentage increase in Q1 is MSE with a 47.01% increase. This indicates a significant positive market reaction or company performance during this period.
 
@@ -36,9 +38,11 @@ Create a script that loops through all the stocks for each quarter and outputs t
 
 <br>
 
-<b>Quarterly 2:</b>
+<u><b>Quarterly 2:</b></u>
 
-![](./results/Quarterly2.png)
+![](./assets/images/Quarterly2.png)
+
+<br>
 
 1. Greatest % Increase: The stock with the greatest percentage increase in Q2 is BGI with a 57.57% increase. This highlights a notable positive trend in the stock's performance, potentially due to favorable market conditions or strong company results.
 
@@ -48,9 +52,11 @@ Create a script that loops through all the stocks for each quarter and outputs t
 
 <br>
 
-<b>Quarterly 3:</b>
+<u><b>Quarterly 3:</b></u>
 
-![](./results/Quarterly3.png)
+![](./assets/images/Quarterly3.png)
+
+<br>
 
 1. Greatest % Increase: The ticker with the greatest percentage increase in Q3 is YH with a 37.21% increase. This indicates strong positive performance and possible favorable events or market sentiment for this stock.
 
@@ -60,9 +66,11 @@ Create a script that loops through all the stocks for each quarter and outputs t
 
 <br>
 
-<b>Quarterly 4:</b>
+<u><b>Quarterly 4:</b></u>
 
-![](./results/Quarterly4.png)
+![](./assets/images/Quarterly4.png)
+
+<br>
 
 1. Greatest % Increase: The ticker with the greatest percentage increase in Q4 is MSE with a 66.35% increase. This substantial increase could be due to positive developments or strong financial performance in the final quarter of the year.
 
