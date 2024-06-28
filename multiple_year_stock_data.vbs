@@ -57,7 +57,29 @@ Sub StockAnalysis()
             ws.Columns(17).AutoFit
         End With
     
-     
+        ' Initialise variables
+        summaryTableRow = 2
+        totalVolume = 0
+        
+        ' Find the last row with data in the worksheet
+        lastRow = ws.Cells(ws.Rows.Count, 1).End(xlUp).Row
+
+        ' Loop through all rows of data
+        For i = 2 To lastRow
+            
+            ' Check if the next row has a different ticker symbol
+            If ws.Cells(i + 1, 1).Value <> ws.Cells(i, 1).Value Then
+                
+                ' Capture the current ticker symbol
+                ticker = ws.Cells(i, 1).Value
+                
+                ' Output results to the summary table
+                ws.Cells(summaryTableRow, 9).Value = ticker
+            
+            End if
+
+        Next i
+        
     Next ws
     
 End Sub
