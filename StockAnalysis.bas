@@ -88,6 +88,7 @@ Sub StockAnalysis()
                 ws.Cells(summaryTableRow, 10).Value = quarterlyChange
                 ws.Cells(summaryTableRow, 11).Value = percentChange
                 ws.Cells(summaryTableRow, 11).NumberFormat = "0.00%"
+                ws.Cells(summaryTableRow, 12).Value = totalVolume
 
                 ' Format the quarterly change cells
                 If quarterlyChange > 0 Then
@@ -102,8 +103,10 @@ Sub StockAnalysis()
                 openPrice = ws.Cells(i + 1, 3).Value
                 totalVolume = 0
                 summaryTableRow = summaryTableRow + 1
-            
-            End if
+            Else
+                ' Accumulate the total volume for the current ticker
+                totalVolume = totalVolume + ws.Cells(i, 7).Value
+            End If
 
         Next i
         
