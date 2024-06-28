@@ -28,8 +28,6 @@ Create a script that loops through all the stocks for each quarter and outputs t
 
 ![](./assets/images/Quarterly1.png)
 
-<br>
-
 1. Greatest % Increase: The ticker with the greatest percentage increase in Q1 is MSE with a 47.01% increase. This indicates a significant positive market reaction or company performance during this period.
 
 2. Greatest % Decrease: The ticker with the greatest percentage decrease in Q1 is VNG with a -77.83% decrease. This reflects a substantial negative impact on the stock, possibly due to poor earnings, bad news, or market conditions.
@@ -41,8 +39,6 @@ Create a script that loops through all the stocks for each quarter and outputs t
 <u><b>Quarterly 2:</b></u>
 
 ![](./assets/images/Quarterly2.png)
-
-<br>
 
 1. Greatest % Increase: The stock with the greatest percentage increase in Q2 is BGI with a 57.57% increase. This highlights a notable positive trend in the stock's performance, potentially due to favorable market conditions or strong company results.
 
@@ -56,8 +52,6 @@ Create a script that loops through all the stocks for each quarter and outputs t
 
 ![](./assets/images/Quarterly3.png)
 
-<br>
-
 1. Greatest % Increase: The ticker with the greatest percentage increase in Q3 is YH with a 37.21% increase. This indicates strong positive performance and possible favorable events or market sentiment for this stock.
 
 2. Greatest % Decrease: The ticker with the greatest percentage decrease in Q3 is BGI with a -47.15% decrease. This sharp decline suggests that the stock faced negative conditions, possibly reversing the previous quarter's gains.
@@ -70,13 +64,13 @@ Create a script that loops through all the stocks for each quarter and outputs t
 
 ![](./assets/images/Quarterly4.png)
 
-<br>
-
 1. Greatest % Increase: The ticker with the greatest percentage increase in Q4 is MSE with a 66.35% increase. This substantial increase could be due to positive developments or strong financial performance in the final quarter of the year.
 
 2. Greatest % Decrease: The ticker with the greatest percentage decrease in Q4 is RKS with a -42.47% decrease. This significant drop highlights possible negative factors affecting the stock towards the year-end.
 
 3. Greatest Total Volume: The stock with the greatest total volume in Q4 is ZRXB with a total volume of 357354108733. This high trading volume indicates significant investor activity or interest during the quarter.
+
+<br>
 
 ## References
 
