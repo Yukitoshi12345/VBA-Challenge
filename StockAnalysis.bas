@@ -57,14 +57,14 @@ Sub StockAnalysis()
             ws.Columns(17).AutoFit
         End With
     
-        ' Initialize variables
+        ' Initialise variables
         summaryTableRow = 2
         totalVolume = 0
         
         ' Find the last row with data in the worksheet
         lastRow = ws.Cells(ws.Rows.Count, 1).End(xlUp).Row
         
-        ' Initialize open price with the first ticker's open price
+        ' Initialise open price with the first ticker's open price
         openPrice = ws.Cells(2, 3).Value
         
         ' Loop through all rows of data
